@@ -1,0 +1,13 @@
+<div>
+  <div>
+    <div *ngFor="let filterConfig of filterConfigs">
+      <div>
+        <label class="filter-header">{{filterConfig.header}}</label>
+      </div>
+      <div *ngFor="let filter of filterConfig.elements">
+        <mat-checkbox class="filter-item" [checked]="filter.isChecked" (change)="onChange(filterConfig, filter, $event)">{{filter.text}}</mat-checkbox>
+        <mat-divider></mat-divider>
+      </div>
+    </div>
+  </div>
+</div>
